@@ -35,7 +35,7 @@ git clonehttps://github.com/tzhang-nmdp/Immuannot
 tar xvf refData-2023Jun05.tgz
 # tar xvf Data-2024Feb02.tar.gz
 ```
-################################## BENCHMARK RUN ########################################
+################################# BENCHMARK RUN ########################################
 ``` r
 make benchmark-run CONFIG_TOML_PATH="mhc_longread_pipeline.toml"
 ```
