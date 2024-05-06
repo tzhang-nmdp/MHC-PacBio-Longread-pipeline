@@ -8,15 +8,15 @@ git clone https://github.com/tzhang-nmdp/MHC-PacBio-Longread-pipeline.git
 
 mkdir in_dir 
 mkdir out_dir
-# Please make the changes for 'PATH' in "config/mhc_longread_pipeline.toml" based on your home/work directory
-# Please donwload benchmark data (https://github.com/tzhang-nmdp/giab_data_indexes) *.fastq into in_dir
+Please make the changes for 'PATH' in "config/mhc_longread_pipeline.toml" based on your home/work directory
+Please donwload benchmark data (https://github.com/tzhang-nmdp/giab_data_indexes) *.fastq into in_dir
 
 
 ########################################## PIPELINE STEUP #############################################################
 ``` r
 make setup
 ```
-# Note: Due to certain conda environment setting restriction, you might need manually run "conda activate mhc_longread_pipeline" after this step.
+Note: Due to certain conda environment setting restriction, you might need manually run "conda activate mhc_longread_pipeline" after this step.
 
 ####################### you can also install pipeline in separate and manual steps ##################################################
 ``` r
@@ -43,7 +43,7 @@ make benchmark-run CONFIG_TOML_PATH="mhc_longread_pipeline.toml"
 
 ####################### you can also test pipeline in separate and manual steps ##################################################
 1. Assembly/alignment
-# 1.1 de novo assembly by hifiasm (1. only need 1~2 hr walltime / 20~40 cpu time, 100 time faster than Hicanu)
+1.1 de novo assembly by hifiasm (1. only need 1~2 hr walltime / 20~40 cpu time, 100 time faster than Hicanu)
 ``` r
 hifiasm -o ${out_dir}/${sample}.MHC.asm -t ${no_thread} ${in_dir}/${sample}.chr6.fastq -N 10000
 awk '/^S/{print ">"$2;print $3}' ${out_dir}/${sample}.MHC.asm.p_ctg.gfa >${out_dir}/${sample}.MHC.asm.p_ctg.gfa.fa
@@ -52,14 +52,14 @@ samtools faidx ${out_dir}/${sample}.MHC.asm.p_ctg.gfa.fa
 
  
 
-#1.2 Reference based Alignment by pbmm2 (5~10 hr walltime / 50~100 cpu time) # consider pangenome reference panel
+1.2 Reference based Alignment by pbmm2 (5~10 hr walltime / 50~100 cpu time) # consider pangenome reference panel
 ``` r
 pbmm2  align \ 
                ${reference.fasta} ${in_dir}/${sample}.chr6.fastq ${out_dir}/${sample}.chr6.bam
 ```
 
 2. Variant calling
-# Variant calling by DeepVariant
+Variant calling by DeepVariant
 ``` r
 docker run \
 
@@ -73,7 +73,7 @@ docker run \
 ```
 
 3. Phasing 
-# phasing by whatshap
+phasing by whatshap
 ``` r
 whatshap phase --reference=${reference.fasta} \
                  -o ${out_dir}/${sample}.MHC.wh.phase.vcf ${in_dir}/${sample}.MHC.vcf ${sample}.chr6.bam
