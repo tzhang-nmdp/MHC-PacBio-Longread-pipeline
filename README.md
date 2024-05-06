@@ -12,13 +12,13 @@ Please make the changes for 'PATH' in "config/mhc_longread_pipeline.toml" based 
 Please donwload benchmark data (https://github.com/tzhang-nmdp/giab_data_indexes) *.fastq into in_dir
 
 
-########################################## PIPELINE STEUP #############################################################
+############################## PIPELINE STEUP #################################
 ``` r
 make setup
 ```
 Note: Due to certain conda environment setting restriction, you might need manually run "conda activate mhc_longread_pipeline" after this step.
 
-####################### you can also install pipeline in separate and manual steps ##################################################
+########## you can also install pipeline in separate and manual steps ##########
 ``` r
 conda install  -c bioconda hifiasm minimap2 samtools pbmm2  
 
@@ -35,13 +35,13 @@ git clonehttps://github.com/tzhang-nmdp/Immuannot
 tar xvf refData-2023Jun05.tgz
 # tar xvf Data-2024Feb02.tar.gz
 ```
-####################################### BENCHMARK RUN ############################################################
+########################## BENCHMARK RUN #################################
 ``` r
 make benchmark-run CONFIG_TOML_PATH="mhc_longread_pipeline.toml"
 ```
 
 
-####################### you can also test pipeline in separate and manual steps ##################################################
+########## you can also test pipeline in separate and manual steps ########
 1. Assembly/alignment
 1.1 de novo assembly by hifiasm (1. only need 1~2 hr walltime / 20~40 cpu time, 100 time faster than Hicanu)
 ``` r
@@ -96,5 +96,5 @@ sudo docker run -it \
                              -c "pggb -i /data/${sample}.MHC.asm.p_ctg.gfa.fa -p 70 -s 3000 -G 2000 -n 2 -t ${no_thread} -o /data/out"
 ```
 
-####################################################################################################
+#######################################################################
 
