@@ -1,0 +1,36 @@
+[path]
+home_dir="/home/ec2-user/SageMaker/tzhang"
+in_dir="/home/ec2-user/SageMaker/tzhang/in_dir"
+out_dir="/home/ec2-user/SageMaker/tzhang/out_dir"
+immuannot_dir="/home/ec2-user/SageMaker/tzhang/Immuannot"
+ref_dir="/home/ec2-user/SageMaker/tzhang/Immuannot/refData-2023Jun05"
+sample="HG002.m84005_220827_014912_s1.GRCh38"
+# logs_dir=home_dir"/logs"
+
+[parameter]
+# multiple threads
+no_thread=8
+
+[parameter.assembly]
+# hifiasm parameter (optional)
+# hifiasm_gm=4m
+# hifiasm_km=40
+hifiasm_olr=10000
+
+[parameter.variant_calling]
+# deepvariant parameter (optional)
+
+[parameter.variant_phasing]
+# whathap parameter (optional)
+
+[parameter.mhc_annotation]
+# immunannot parameter (optional)
+immunannot_olr=0.9
+immunannot_dif=0.03
+
+[parameter.pangenomic_graph]
+# pggb parameter (optional)
+# pggb_nns=70
+# pggb_ssl=3000
+# pggb_poa=2000
+pggb_hap=2
