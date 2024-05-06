@@ -1,8 +1,7 @@
-WORKFLOW
+###  MHC-PacBio-Longread-pipeline WORKFLOW
 
-
-PROCEDURE
 Installation
+``` r
 git clone folder into your work directory: 
 git clone https://github.com/tzhang-nmdp/MHC-PacBio-Longread-pipeline.git
 
@@ -10,7 +9,7 @@ mkdir in_dir
 mkdir out_dir
 Please make the changes for 'PATH' in "config/mhc_longread_pipeline.toml" based on your home/work directory
 Please donwload benchmark data (https://github.com/tzhang-nmdp/giab_data_indexes) *.fastq into in_dir
-
+```
 
 #################################### PIPELINE STEUP #######################################
 ``` r
