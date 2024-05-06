@@ -46,7 +46,7 @@ setup:	## install mhc longread pipeline
    
 benchmark-run: ## Benchmark test for MHC Longread Pipeline
 	@echo "============================Benchmark test runs starting at $(DATE_TIME)==============================="
-	python mhc_longread_pipeline.py "${CONFIG_TOML_PATH}"
+	python script/mhc_longread_pipeline.py "${CONFIG_TOML_PATH}"
 	@echo "============================Benchmark test runs ending at $(DATE_TIME)================================="    
     
 clean: clean-test ## remove all test
