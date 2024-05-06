@@ -12,7 +12,7 @@ Please make the changes for 'PATH' in "config/mhc_longread_pipeline.toml" based 
 Please donwload benchmark data (https://github.com/tzhang-nmdp/giab_data_indexes) *.fastq into in_dir
 
 
-###################################### PIPELINE STEUP #########################################
+#################################### PIPELINE STEUP #######################################
 ``` r
 make setup
 ```
