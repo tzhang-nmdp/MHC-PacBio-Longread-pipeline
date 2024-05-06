@@ -71,5 +71,5 @@ sample = args_dict['path']['sample']
 print("### run mhc longread pipeline ###")
 # mhc_longread_pipeline_commandline = ['bash mhc_longread_pipeline.sh' , '-w' ,  home_dir , '-r' , ref_dir , '-s' , sample , '-p' , '_'.join(str(para) for para in [no_thread , hifiasm_olr , immunannot_olr , immunannot_dif , pggb_hap])]
 # run(mhc_longread_pipeline_commandline , shell=True)
-mhc_longread_pipeline_commandline = 'bash mhc_longread_pipeline.sh -w ' + home_dir + ' -r ' + ref_dir + ' -s ' + sample + ' -p ' + '_'.join(str(para) for para in [no_thread , hifiasm_olr , immunannot_olr , immunannot_dif , pggb_hap])
+mhc_longread_pipeline_commandline = 'bash script/mhc_longread_pipeline.sh -w ' + home_dir + ' -r ' + ref_dir + ' -s ' + sample + ' -p ' + '_'.join(str(para) for para in [no_thread , hifiasm_olr , immunannot_olr , immunannot_dif , pggb_hap])
 os.system(mhc_longread_pipeline_commandline)
